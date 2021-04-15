@@ -24,19 +24,29 @@ print("\n",wezly)
 print(elementy)
 
 n=100;
+
 def generujTabliceGeometrii(p,k,n):
     tmp = (k-p) / (n-1)
     matrix = np.array([1,p])
+    matrix2 = np.array([1,1,2])
     print(matrix)
 
     for i in range(1, n, 1):
         matrix = np.block([
             [matrix],
-            [i, i * tmp + p],
+            [i+1, i * tmp + p],
         ])
-    return matrix
+    for i in range (1,n,1):
+        matrix2 = np.block([
+            [matrix2],
+            [i,i,i+1]
+        ])
+
+
+    return matrix,matrix2
 
 
 
-WEZLY = generujTabliceGeometrii(x_a,x_b,n)
+WEZLY,ELEMENTY = generujTabliceGeometrii(x_a,x_b,n)
 print(WEZLY)
+print(ELEMENTY)
