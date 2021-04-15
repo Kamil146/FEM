@@ -1,5 +1,5 @@
 import numpy as np
-import matplotlib as mat
+import matplotlib.pyplot as plt
 
 #Preprocesing
 c=0
@@ -36,7 +36,7 @@ def generujTabliceGeometrii(p,k,n):
             [matrix],
             [i+1, i * tmp + p],
         ])
-    for i in range (1,n,1):
+    for i in range (2,n,1):
         matrix2 = np.block([
             [matrix2],
             [i,i,i+1]
@@ -50,3 +50,10 @@ def generujTabliceGeometrii(p,k,n):
 WEZLY,ELEMENTY = generujTabliceGeometrii(x_a,x_b,n)
 print(WEZLY)
 print(ELEMENTY)
+
+y=np.zeros(n)
+x=WEZLY
+plt.plot(x,y)
+plt.show()
+
+
