@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 c=0
 f=0
 x_a=0
-x_b=1
+x_b=10
 wezly=np.array([[1,0],
                [2,1],
                [3,0.5],
@@ -23,7 +23,7 @@ wwb_P = 1
 print("\n",wezly)
 print(elementy)
 
-n=10;
+n=5;
 
 def generujTabliceGeometrii(p,k,n):
     tmp = (k-p) / (n-1)
@@ -57,6 +57,8 @@ def generujGeomtrie(wezly):
         plt.text(x=wezly[i,1],y=y[i]-0.008,s=int(wezly[i,0]),color='red')
     for i in range(0, np.size(y)-1, 1):
         plt.text(x=(wezly[i, 1]+wezly[i+1, 1])/2, y=y[i] + 0.005, s=int(i+1),color='blue')
+    plt.text(x=wezly[0, 1]-0.025, y=y[i] + 0.005,s=twb_L)
+    plt.text(x=wezly[-1, 1] + 0.025, y=y[i] + 0.005, s=twb_P)
     plt.show()
 
 
